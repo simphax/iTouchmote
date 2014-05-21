@@ -1,0 +1,3 @@
+[submodule "MetatoneOSC"]
+	path = MetatoneOSC
+	url = https://github.com/simphax/MetatoneOSC.git
