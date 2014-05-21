@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4A5F53419190CD300561D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53319190CD300561D5E /* Foundation.framework */; };
+		F4A5F53619190CD300561D5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53519190CD300561D5E /* CoreGraphics.framework */; };
+		F4A5F53819190CD300561D5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53719190CD300561D5E /* UIKit.framework */; };
+		F4A5F53E19190CD300561D5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4A5F53C19190CD300561D5E /* InfoPlist.strings */; };
+		F4A5F54019190CD300561D5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F53F19190CD300561D5E /* main.m */; };
+		F4A5F54419190CD300561D5E /* SHXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F54319190CD300561D5E /* SHXAppDelegate.m */; };
+		F4A5F54719190CD300561D5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A5F54519190CD300561D5E /* Main.storyboard */; };
+		F4A5F54A19190CD300561D5E /* SHXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F54919190CD300561D5E /* SHXViewController.m */; };
+		F4A5F54C19190CD300561D5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A5F54B19190CD300561D5E /* Images.xcassets */; };
+		F4A5F55319190CD300561D5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F55219190CD300561D5E /* XCTest.framework */; };
+		F4A5F55419190CD300561D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53319190CD300561D5E /* Foundation.framework */; };
+		F4A5F55519190CD300561D5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53719190CD300561D5E /* UIKit.framework */; };
+		F4A5F55D19190CD300561D5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4A5F55B19190CD300561D5E /* InfoPlist.strings */; };
+		F4A5F55F19190CD300561D5E /* iTouchmoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F55E19190CD300561D5E /* iTouchmoteTests.m */; };
+		F4A5F56919190D9100561D5E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F56819190D9100561D5E /* CoreMotion.framework */; };
+		F4D87B1D19193DA7005C8855 /* F53OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87AFE19193DA7005C8855 /* F53OSCBundle.m */; };
+		F4D87B1E19193DA7005C8855 /* F53OSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0019193DA7005C8855 /* F53OSCClient.m */; };
+		F4D87B1F19193DA7005C8855 /* F53OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0319193DA7005C8855 /* F53OSCMessage.m */; };
+		F4D87B2019193DA7005C8855 /* F53OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0519193DA7005C8855 /* F53OSCPacket.m */; };
+		F4D87B2119193DA7005C8855 /* F53OSCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0719193DA7005C8855 /* F53OSCParser.m */; };
+		F4D87B2219193DA7005C8855 /* F53OSCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0A19193DA7005C8855 /* F53OSCServer.m */; };
+		F4D87B2319193DA7005C8855 /* F53OSCSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0C19193DA7005C8855 /* F53OSCSocket.m */; };
+		F4D87B2419193DA7005C8855 /* F53OSCTimeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0E19193DA7005C8855 /* F53OSCTimeTag.m */; };
+		F4D87B2519193DA7005C8855 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B1019193DA7005C8855 /* GCDAsyncSocket.m */; };
+		F4D87B2619193DA7005C8855 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B1219193DA7005C8855 /* GCDAsyncUdpSocket.m */; };
+		F4D87B2719193DA7005C8855 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F4D87B1319193DA7005C8855 /* LICENSE.txt */; };
+		F4D87B2819193DA7005C8855 /* NSData+F53OSCBlob.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B1519193DA7005C8855 /* NSData+F53OSCBlob.m */; };
+		F4D87B2919193DA7005C8855 /* NSDate+F53OSCTimeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B1719193DA7005C8855 /* NSDate+F53OSCTimeTag.m */; };
+		F4D87B2A19193DA7005C8855 /* NSNumber+F53OSCNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B1919193DA7005C8855 /* NSNumber+F53OSCNumber.m */; };
+		F4D87B2B19193DA7005C8855 /* NSString+F53OSCString.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B1B19193DA7005C8855 /* NSString+F53OSCString.m */; };
+		F4D87B2C19193DA7005C8855 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = F4D87B1C19193DA7005C8855 /* README.markdown */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4A5F55619190CD300561D5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4A5F52819190CD300561D5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4A5F52F19190CD300561D5E;
+			remoteInfo = iTouchmote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F4A5F53019190CD300561D5E /* iTouchmote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTouchmote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A5F53319190CD300561D5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F4A5F53519190CD300561D5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F4A5F53719190CD300561D5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F4A5F53B19190CD300561D5E /* iTouchmote-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTouchmote-Info.plist"; sourceTree = "<group>"; };
+		F4A5F53D19190CD300561D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F4A5F53F19190CD300561D5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4A5F54119190CD300561D5E /* iTouchmote-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTouchmote-Prefix.pch"; sourceTree = "<group>"; };
+		F4A5F54219190CD300561D5E /* SHXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHXAppDelegate.h; sourceTree = "<group>"; };
+		F4A5F54319190CD300561D5E /* SHXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHXAppDelegate.m; sourceTree = "<group>"; };
+		F4A5F54619190CD300561D5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4A5F54819190CD300561D5E /* SHXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHXViewController.h; sourceTree = "<group>"; };
+		F4A5F54919190CD300561D5E /* SHXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHXViewController.m; sourceTree = "<group>"; };
+		F4A5F54B19190CD300561D5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F4A5F55119190CD300561D5E /* iTouchmoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTouchmoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A5F55219190CD300561D5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F4A5F55A19190CD300561D5E /* iTouchmoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTouchmoteTests-Info.plist"; sourceTree = "<group>"; };
+		F4A5F55C19190CD300561D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F4A5F55E19190CD300561D5E /* iTouchmoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTouchmoteTests.m; sourceTree = "<group>"; };
+		F4A5F56819190D9100561D5E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		F4D87AFC19193DA7005C8855 /* F53OSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSC.h; sourceTree = "<group>"; };
+		F4D87AFD19193DA7005C8855 /* F53OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCBundle.h; sourceTree = "<group>"; };
+		F4D87AFE19193DA7005C8855 /* F53OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCBundle.m; sourceTree = "<group>"; };
+		F4D87AFF19193DA7005C8855 /* F53OSCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCClient.h; sourceTree = "<group>"; };
+		F4D87B0019193DA7005C8855 /* F53OSCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCClient.m; sourceTree = "<group>"; };
+		F4D87B0119193DA7005C8855 /* F53OSCFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCFoundationAdditions.h; sourceTree = "<group>"; };
+		F4D87B0219193DA7005C8855 /* F53OSCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCMessage.h; sourceTree = "<group>"; };
+		F4D87B0319193DA7005C8855 /* F53OSCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCMessage.m; sourceTree = "<group>"; };
+		F4D87B0419193DA7005C8855 /* F53OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCPacket.h; sourceTree = "<group>"; };
+		F4D87B0519193DA7005C8855 /* F53OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCPacket.m; sourceTree = "<group>"; };
+		F4D87B0619193DA7005C8855 /* F53OSCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCParser.h; sourceTree = "<group>"; };
+		F4D87B0719193DA7005C8855 /* F53OSCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCParser.m; sourceTree = "<group>"; };
+		F4D87B0819193DA7005C8855 /* F53OSCProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCProtocols.h; sourceTree = "<group>"; };
+		F4D87B0919193DA7005C8855 /* F53OSCServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCServer.h; sourceTree = "<group>"; };
+		F4D87B0A19193DA7005C8855 /* F53OSCServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCServer.m; sourceTree = "<group>"; };
+		F4D87B0B19193DA7005C8855 /* F53OSCSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCSocket.h; sourceTree = "<group>"; };
+		F4D87B0C19193DA7005C8855 /* F53OSCSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCSocket.m; sourceTree = "<group>"; };
+		F4D87B0D19193DA7005C8855 /* F53OSCTimeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCTimeTag.h; sourceTree = "<group>"; };
+		F4D87B0E19193DA7005C8855 /* F53OSCTimeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCTimeTag.m; sourceTree = "<group>"; };
+		F4D87B0F19193DA7005C8855 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		F4D87B1019193DA7005C8855 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		F4D87B1119193DA7005C8855 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		F4D87B1219193DA7005C8855 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		F4D87B1319193DA7005C8855 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		F4D87B1419193DA7005C8855 /* NSData+F53OSCBlob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+F53OSCBlob.h"; sourceTree = "<group>"; };
+		F4D87B1519193DA7005C8855 /* NSData+F53OSCBlob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+F53OSCBlob.m"; sourceTree = "<group>"; };
+		F4D87B1619193DA7005C8855 /* NSDate+F53OSCTimeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+F53OSCTimeTag.h"; sourceTree = "<group>"; };
+		F4D87B1719193DA7005C8855 /* NSDate+F53OSCTimeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+F53OSCTimeTag.m"; sourceTree = "<group>"; };
+		F4D87B1819193DA7005C8855 /* NSNumber+F53OSCNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+F53OSCNumber.h"; sourceTree = "<group>"; };
+		F4D87B1919193DA7005C8855 /* NSNumber+F53OSCNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+F53OSCNumber.m"; sourceTree = "<group>"; };
+		F4D87B1A19193DA7005C8855 /* NSString+F53OSCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+F53OSCString.h"; sourceTree = "<group>"; };
+		F4D87B1B19193DA7005C8855 /* NSString+F53OSCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+F53OSCString.m"; sourceTree = "<group>"; };
+		F4D87B1C19193DA7005C8855 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4A5F52D19190CD300561D5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A5F56919190D9100561D5E /* CoreMotion.framework in Frameworks */,
+				F4A5F53619190CD300561D5E /* CoreGraphics.framework in Frameworks */,
+				F4A5F53819190CD300561D5E /* UIKit.framework in Frameworks */,
+				F4A5F53419190CD300561D5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A5F54E19190CD300561D5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A5F55319190CD300561D5E /* XCTest.framework in Frameworks */,
+				F4A5F55519190CD300561D5E /* UIKit.framework in Frameworks */,
+				F4A5F55419190CD300561D5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4A5F52719190CD300561D5E = {
+			isa = PBXGroup;
+			children = (
+				F4D87AFB19193DA7005C8855 /* MetatoneOSC */,
+				F4A5F53919190CD300561D5E /* iTouchmote */,
+				F4A5F55819190CD300561D5E /* iTouchmoteTests */,
+				F4A5F53219190CD300561D5E /* Frameworks */,
+				F4A5F53119190CD300561D5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4A5F53119190CD300561D5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4A5F53019190CD300561D5E /* iTouchmote.app */,
+				F4A5F55119190CD300561D5E /* iTouchmoteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4A5F53219190CD300561D5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4A5F56819190D9100561D5E /* CoreMotion.framework */,
+				F4A5F53319190CD300561D5E /* Foundation.framework */,
+				F4A5F53519190CD300561D5E /* CoreGraphics.framework */,
+				F4A5F53719190CD300561D5E /* UIKit.framework */,
+				F4A5F55219190CD300561D5E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4A5F53919190CD300561D5E /* iTouchmote */ = {
+			isa = PBXGroup;
+			children = (
+				F4A5F54219190CD300561D5E /* SHXAppDelegate.h */,
+				F4A5F54319190CD300561D5E /* SHXAppDelegate.m */,
+				F4A5F54519190CD300561D5E /* Main.storyboard */,
+				F4A5F54819190CD300561D5E /* SHXViewController.h */,
+				F4A5F54919190CD300561D5E /* SHXViewController.m */,
+				F4A5F54B19190CD300561D5E /* Images.xcassets */,
+				F4A5F53A19190CD300561D5E /* Supporting Files */,
+			);
+			path = iTouchmote;
+			sourceTree = "<group>";
+		};
+		F4A5F53A19190CD300561D5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4A5F53B19190CD300561D5E /* iTouchmote-Info.plist */,
+				F4A5F53C19190CD300561D5E /* InfoPlist.strings */,
+				F4A5F53F19190CD300561D5E /* main.m */,
+				F4A5F54119190CD300561D5E /* iTouchmote-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4A5F55819190CD300561D5E /* iTouchmoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4A5F55E19190CD300561D5E /* iTouchmoteTests.m */,
+				F4A5F55919190CD300561D5E /* Supporting Files */,
+			);
+			path = iTouchmoteTests;
+			sourceTree = "<group>";
+		};
+		F4A5F55919190CD300561D5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4A5F55A19190CD300561D5E /* iTouchmoteTests-Info.plist */,
+				F4A5F55B19190CD300561D5E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4D87AFB19193DA7005C8855 /* MetatoneOSC */ = {
+			isa = PBXGroup;
+			children = (
+				F4D87AFC19193DA7005C8855 /* F53OSC.h */,
+				F4D87AFD19193DA7005C8855 /* F53OSCBundle.h */,
+				F4D87AFE19193DA7005C8855 /* F53OSCBundle.m */,
+				F4D87AFF19193DA7005C8855 /* F53OSCClient.h */,
+				F4D87B0019193DA7005C8855 /* F53OSCClient.m */,
+				F4D87B0119193DA7005C8855 /* F53OSCFoundationAdditions.h */,
+				F4D87B0219193DA7005C8855 /* F53OSCMessage.h */,
+				F4D87B0319193DA7005C8855 /* F53OSCMessage.m */,
+				F4D87B0419193DA7005C8855 /* F53OSCPacket.h */,
+				F4D87B0519193DA7005C8855 /* F53OSCPacket.m */,
+				F4D87B0619193DA7005C8855 /* F53OSCParser.h */,
+				F4D87B0719193DA7005C8855 /* F53OSCParser.m */,
+				F4D87B0819193DA7005C8855 /* F53OSCProtocols.h */,
+				F4D87B0919193DA7005C8855 /* F53OSCServer.h */,
+				F4D87B0A19193DA7005C8855 /* F53OSCServer.m */,
+				F4D87B0B19193DA7005C8855 /* F53OSCSocket.h */,
+				F4D87B0C19193DA7005C8855 /* F53OSCSocket.m */,
+				F4D87B0D19193DA7005C8855 /* F53OSCTimeTag.h */,
+				F4D87B0E19193DA7005C8855 /* F53OSCTimeTag.m */,
+				F4D87B0F19193DA7005C8855 /* GCDAsyncSocket.h */,
+				F4D87B1019193DA7005C8855 /* GCDAsyncSocket.m */,
+				F4D87B1119193DA7005C8855 /* GCDAsyncUdpSocket.h */,
+				F4D87B1219193DA7005C8855 /* GCDAsyncUdpSocket.m */,
+				F4D87B1319193DA7005C8855 /* LICENSE.txt */,
+				F4D87B1419193DA7005C8855 /* NSData+F53OSCBlob.h */,
+				F4D87B1519193DA7005C8855 /* NSData+F53OSCBlob.m */,
+				F4D87B1619193DA7005C8855 /* NSDate+F53OSCTimeTag.h */,
+				F4D87B1719193DA7005C8855 /* NSDate+F53OSCTimeTag.m */,
+				F4D87B1819193DA7005C8855 /* NSNumber+F53OSCNumber.h */,
+				F4D87B1919193DA7005C8855 /* NSNumber+F53OSCNumber.m */,
+				F4D87B1A19193DA7005C8855 /* NSString+F53OSCString.h */,
+				F4D87B1B19193DA7005C8855 /* NSString+F53OSCString.m */,
+				F4D87B1C19193DA7005C8855 /* README.markdown */,
+			);
+			path = MetatoneOSC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4A5F52F19190CD300561D5E /* iTouchmote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A5F56219190CD300561D5E /* Build configuration list for PBXNativeTarget "iTouchmote" */;
+			buildPhases = (
+				F4A5F52C19190CD300561D5E /* Sources */,
+				F4A5F52D19190CD300561D5E /* Frameworks */,
+				F4A5F52E19190CD300561D5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTouchmote;
+			productName = iTouchmote;
+			productReference = F4A5F53019190CD300561D5E /* iTouchmote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4A5F55019190CD300561D5E /* iTouchmoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A5F56519190CD300561D5E /* Build configuration list for PBXNativeTarget "iTouchmoteTests" */;
+			buildPhases = (
+				F4A5F54D19190CD300561D5E /* Sources */,
+				F4A5F54E19190CD300561D5E /* Frameworks */,
+				F4A5F54F19190CD300561D5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4A5F55719190CD300561D5E /* PBXTargetDependency */,
+			);
+			name = iTouchmoteTests;
+			productName = iTouchmoteTests;
+			productReference = F4A5F55119190CD300561D5E /* iTouchmoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4A5F52819190CD300561D5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SHX;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Simon Nilsson";
+				TargetAttributes = {
+					F4A5F52F19190CD300561D5E = {
+						DevelopmentTeam = 8F732M5KXK;
+					};
+					F4A5F55019190CD300561D5E = {
+						TestTargetID = F4A5F52F19190CD300561D5E;
+					};
+				};
+			};
+			buildConfigurationList = F4A5F52B19190CD300561D5E /* Build configuration list for PBXProject "iTouchmote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4A5F52719190CD300561D5E;
+			productRefGroup = F4A5F53119190CD300561D5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4A5F52F19190CD300561D5E /* iTouchmote */,
+				F4A5F55019190CD300561D5E /* iTouchmoteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4A5F52E19190CD300561D5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4D87B2719193DA7005C8855 /* LICENSE.txt in Resources */,
+				F4D87B2C19193DA7005C8855 /* README.markdown in Resources */,
+				F4A5F54C19190CD300561D5E /* Images.xcassets in Resources */,
+				F4A5F53E19190CD300561D5E /* InfoPlist.strings in Resources */,
+				F4A5F54719190CD300561D5E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A5F54F19190CD300561D5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A5F55D19190CD300561D5E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4A5F52C19190CD300561D5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4D87B2519193DA7005C8855 /* GCDAsyncSocket.m in Sources */,
+				F4D87B2419193DA7005C8855 /* F53OSCTimeTag.m in Sources */,
+				F4D87B2019193DA7005C8855 /* F53OSCPacket.m in Sources */,
+				F4D87B2A19193DA7005C8855 /* NSNumber+F53OSCNumber.m in Sources */,
+				F4D87B2319193DA7005C8855 /* F53OSCSocket.m in Sources */,
+				F4D87B2B19193DA7005C8855 /* NSString+F53OSCString.m in Sources */,
+				F4D87B2219193DA7005C8855 /* F53OSCServer.m in Sources */,
+				F4D87B2119193DA7005C8855 /* F53OSCParser.m in Sources */,
+				F4A5F54419190CD300561D5E /* SHXAppDelegate.m in Sources */,
+				F4A5F54019190CD300561D5E /* main.m in Sources */,
+				F4D87B2919193DA7005C8855 /* NSDate+F53OSCTimeTag.m in Sources */,
+				F4D87B1D19193DA7005C8855 /* F53OSCBundle.m in Sources */,
+				F4D87B1E19193DA7005C8855 /* F53OSCClient.m in Sources */,
+				F4D87B1F19193DA7005C8855 /* F53OSCMessage.m in Sources */,
+				F4D87B2619193DA7005C8855 /* GCDAsyncUdpSocket.m in Sources */,
+				F4D87B2819193DA7005C8855 /* NSData+F53OSCBlob.m in Sources */,
+				F4A5F54A19190CD300561D5E /* SHXViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A5F54D19190CD300561D5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A5F55F19190CD300561D5E /* iTouchmoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4A5F55719190CD300561D5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4A5F52F19190CD300561D5E /* iTouchmote */;
+			targetProxy = F4A5F55619190CD300561D5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4A5F53C19190CD300561D5E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4A5F53D19190CD300561D5E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F4A5F54519190CD300561D5E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4A5F54619190CD300561D5E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4A5F55B19190CD300561D5E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4A5F55C19190CD300561D5E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4A5F56019190CD300561D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F4A5F56119190CD300561D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4A5F56319190CD300561D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTouchmote/iTouchmote-Prefix.pch";
+				INFOPLIST_FILE = "iTouchmote/iTouchmote-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F4A5F56419190CD300561D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTouchmote/iTouchmote-Prefix.pch";
+				INFOPLIST_FILE = "iTouchmote/iTouchmote-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F4A5F56619190CD300561D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTouchmote.app/iTouchmote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTouchmote/iTouchmote-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iTouchmoteTests/iTouchmoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F4A5F56719190CD300561D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTouchmote.app/iTouchmote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTouchmote/iTouchmote-Prefix.pch";
+				INFOPLIST_FILE = "iTouchmoteTests/iTouchmoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4A5F52B19190CD300561D5E /* Build configuration list for PBXProject "iTouchmote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A5F56019190CD300561D5E /* Debug */,
+				F4A5F56119190CD300561D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4A5F56219190CD300561D5E /* Build configuration list for PBXNativeTarget "iTouchmote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A5F56319190CD300561D5E /* Debug */,
+				F4A5F56419190CD300561D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4A5F56519190CD300561D5E /* Build configuration list for PBXNativeTarget "iTouchmoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A5F56619190CD300561D5E /* Debug */,
+				F4A5F56719190CD300561D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4A5F52819190CD300561D5E /* Project object */;
+}
