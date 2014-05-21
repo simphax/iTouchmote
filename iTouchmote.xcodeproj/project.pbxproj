@@ -14,7 +14,7 @@
 		F4A5F54019190CD300561D5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F53F19190CD300561D5E /* main.m */; };
 		F4A5F54419190CD300561D5E /* SHXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F54319190CD300561D5E /* SHXAppDelegate.m */; };
 		F4A5F54719190CD300561D5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A5F54519190CD300561D5E /* Main.storyboard */; };
-		F4A5F54A19190CD300561D5E /* SHXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F54919190CD300561D5E /* SHXViewController.m */; };
+		F4A5F54A19190CD300561D5E /* SHXTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F54919190CD300561D5E /* SHXTouchViewController.m */; };
 		F4A5F54C19190CD300561D5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A5F54B19190CD300561D5E /* Images.xcassets */; };
 		F4A5F55319190CD300561D5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F55219190CD300561D5E /* XCTest.framework */; };
 		F4A5F55419190CD300561D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53319190CD300561D5E /* Foundation.framework */; };
@@ -22,6 +22,7 @@
 		F4A5F55D19190CD300561D5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4A5F55B19190CD300561D5E /* InfoPlist.strings */; };
 		F4A5F55F19190CD300561D5E /* iTouchmoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5F55E19190CD300561D5E /* iTouchmoteTests.m */; };
 		F4A5F56919190D9100561D5E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F56819190D9100561D5E /* CoreMotion.framework */; };
+		F4D67DDB192CC8C30014D433 /* SHXBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D67DDA192CC8C30014D433 /* SHXBrowseViewController.m */; };
 		F4D87B1D19193DA7005C8855 /* F53OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87AFE19193DA7005C8855 /* F53OSCBundle.m */; };
 		F4D87B1E19193DA7005C8855 /* F53OSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0019193DA7005C8855 /* F53OSCClient.m */; };
 		F4D87B1F19193DA7005C8855 /* F53OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D87B0319193DA7005C8855 /* F53OSCMessage.m */; };
@@ -62,8 +63,8 @@
 		F4A5F54219190CD300561D5E /* SHXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHXAppDelegate.h; sourceTree = "<group>"; };
 		F4A5F54319190CD300561D5E /* SHXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHXAppDelegate.m; sourceTree = "<group>"; };
 		F4A5F54619190CD300561D5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F4A5F54819190CD300561D5E /* SHXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHXViewController.h; sourceTree = "<group>"; };
-		F4A5F54919190CD300561D5E /* SHXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHXViewController.m; sourceTree = "<group>"; };
+		F4A5F54819190CD300561D5E /* SHXTouchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHXTouchViewController.h; sourceTree = "<group>"; };
+		F4A5F54919190CD300561D5E /* SHXTouchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHXTouchViewController.m; sourceTree = "<group>"; };
 		F4A5F54B19190CD300561D5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4A5F55119190CD300561D5E /* iTouchmoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTouchmoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A5F55219190CD300561D5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -71,6 +72,8 @@
 		F4A5F55C19190CD300561D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4A5F55E19190CD300561D5E /* iTouchmoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTouchmoteTests.m; sourceTree = "<group>"; };
 		F4A5F56819190D9100561D5E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		F4D67DD9192CC8C30014D433 /* SHXBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHXBrowseViewController.h; sourceTree = "<group>"; };
+		F4D67DDA192CC8C30014D433 /* SHXBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHXBrowseViewController.m; sourceTree = "<group>"; };
 		F4D87AFC19193DA7005C8855 /* F53OSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSC.h; sourceTree = "<group>"; };
 		F4D87AFD19193DA7005C8855 /* F53OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F53OSCBundle.h; sourceTree = "<group>"; };
 		F4D87AFE19193DA7005C8855 /* F53OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F53OSCBundle.m; sourceTree = "<group>"; };
@@ -169,10 +172,12 @@
 				F4A5F54219190CD300561D5E /* SHXAppDelegate.h */,
 				F4A5F54319190CD300561D5E /* SHXAppDelegate.m */,
 				F4A5F54519190CD300561D5E /* Main.storyboard */,
-				F4A5F54819190CD300561D5E /* SHXViewController.h */,
-				F4A5F54919190CD300561D5E /* SHXViewController.m */,
+				F4A5F54819190CD300561D5E /* SHXTouchViewController.h */,
+				F4A5F54919190CD300561D5E /* SHXTouchViewController.m */,
 				F4A5F54B19190CD300561D5E /* Images.xcassets */,
 				F4A5F53A19190CD300561D5E /* Supporting Files */,
+				F4D67DD9192CC8C30014D433 /* SHXBrowseViewController.h */,
+				F4D67DDA192CC8C30014D433 /* SHXBrowseViewController.m */,
 			);
 			path = iTouchmote;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D67DDB192CC8C30014D433 /* SHXBrowseViewController.m in Sources */,
 				F4D87B2519193DA7005C8855 /* GCDAsyncSocket.m in Sources */,
 				F4D87B2419193DA7005C8855 /* F53OSCTimeTag.m in Sources */,
 				F4D87B2019193DA7005C8855 /* F53OSCPacket.m in Sources */,
@@ -365,7 +371,7 @@
 				F4D87B1F19193DA7005C8855 /* F53OSCMessage.m in Sources */,
 				F4D87B2619193DA7005C8855 /* GCDAsyncUdpSocket.m in Sources */,
 				F4D87B2819193DA7005C8855 /* NSData+F53OSCBlob.m in Sources */,
-				F4A5F54A19190CD300561D5E /* SHXViewController.m in Sources */,
+				F4A5F54A19190CD300561D5E /* SHXTouchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

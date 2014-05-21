@@ -1,5 +1,5 @@
 //
-//  SHXViewController.h
+//  SHXTouchViewController.h
 //  iTouchmote
 //
 //  Created by Simon on 2014-05-06.
@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
-//#import <CoreLocation/CoreLocation.h>
 
-@interface SHXViewController : UIViewController <NSNetServiceBrowserDelegate,NSNetServiceDelegate,UITableViewDataSource, UITableViewDelegate>
+@interface SHXTouchViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *bonjourTable;
 
 @property (weak, nonatomic) IBOutlet UILabel *pitchLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rollLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yawLabel;
+
+@property (assign) NSNetService *hostService;
 
 @end
