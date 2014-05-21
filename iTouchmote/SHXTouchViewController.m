@@ -12,6 +12,8 @@
 @interface SHXTouchViewController ()
 {
     bool touchDown;
+    CGPoint firstTouchPosition;
+    CGPoint touchDragRelativePosition;
 }
 
 @property (strong, nonatomic) NSOperationQueue *motionQueue;
@@ -69,7 +71,7 @@
                 F53OSCClient *oscClient = [[F53OSCClient alloc] init];
                 F53OSCMessage *message =
                 [F53OSCMessage messageWithAddressPattern:@"/cursor/motionData"
-                                               arguments:@[@(_currentAttitude.pitch),@(_currentAttitude.roll),@(_currentAttitude.yaw),@(touchDown)]];
+                                               arguments:@[@(_currentAttitude.pitch),@(_currentAttitude.roll),@(_currentAttitude.yaw),@(touchDown),@(touchDragRelativePosition.x),@(touchDragRelativePosition.y)]];
                 [oscClient sendPacket:message toHost:[_hostService hostName] onPort:[_hostService port]];
             }
             
@@ -104,13 +106,33 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)touchButtonDown:(id)sender
+- (IBAction)touchDragInside:(id)sender forEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:touch.window];
+    
+    location.x = location.x - firstTouchPosition.x;
+    location.y = location.y - firstTouchPosition.y;
+    
+    touchDragRelativePosition.x = location.x/touch.window.bounds.size.width;
+    touchDragRelativePosition.y = location.y/touch.window.bounds.size.height;
+}
+
+- (IBAction)touchButtonDown:(id)sender forEvent:(UIEvent *)event
 {
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:touch.window];
+    
+    firstTouchPosition = location;
+    touchDragRelativePosition.x = 0;
+    touchDragRelativePosition.y = 0;
+    
     touchDown = true;
 }
 
 - (IBAction)touchButtonUp:(id)sender
 {
+    touchDragRelativePosition.x = 0;
+    touchDragRelativePosition.y = 0;
     touchDown = false;
 }
 

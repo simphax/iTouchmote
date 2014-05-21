@@ -72,8 +72,9 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <state key="normal" title="Touch"/>
                                 <connections>
-                                    <action selector="touchButtonDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="izx-QS-9hz"/>
+                                    <action selector="touchButtonDown:forEvent:" destination="vXZ-lx-hvc" eventType="touchDown" id="EJr-ZN-WMm"/>
                                     <action selector="touchButtonUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FZb-hB-ClZ"/>
+                                    <action selector="touchDragInside:forEvent:" destination="vXZ-lx-hvc" eventType="touchDragInside" id="8dV-vG-jkR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzN-ll-L6W">
