@@ -13,6 +13,8 @@
     NSMutableArray *services;
     
     int connectedService;
+    
+    SHXTouchViewController *touchViewController;
 }
 
 @property (strong, nonatomic) NSNetServiceBrowser *bonjourBrowser;
@@ -78,6 +80,10 @@
     {
         connectedService = -1;
     }
+    if(touchViewController != nil && touchViewController.hostService == netService)
+    {
+        touchViewController.hostService = nil;
+    }
     [services removeObject:netService];
     [self.bonjourTable reloadData];
 }
@@ -122,7 +128,10 @@
         [self connectToService:indexPath.row];
         
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        SHXTouchViewController *touchViewController = (SHXTouchViewController*)[sb instantiateViewControllerWithIdentifier:@"touchViewController"];
+        if(touchViewController == nil)
+        {
+            touchViewController = (SHXTouchViewController*)[sb instantiateViewControllerWithIdentifier:@"touchViewController"];
+        }
         
         [touchViewController setHostService:[services objectAtIndex:connectedService]];
         touchViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

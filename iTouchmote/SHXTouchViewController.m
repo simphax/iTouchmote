@@ -14,6 +14,8 @@
     bool touchDown;
     CGPoint firstTouchPosition;
     CGPoint touchDragRelativePosition;
+    
+    int messageId;
 }
 
 @property (strong, nonatomic) NSOperationQueue *motionQueue;
@@ -33,6 +35,7 @@
     
     NSLog(@"Lets go!");
     touchDown = false;
+    messageId = 0;
     
     _motionManager = [[CMMotionManager alloc] init];
     [_motionManager setDeviceMotionUpdateInterval:0.01];
@@ -64,15 +67,36 @@
             }];
             
             
-            
-            if(_hostService != nil)
+            if(self.hostService != nil)
             {
                 //NSLog(@"Sending message to %@",[theService hostName]);
                 F53OSCClient *oscClient = [[F53OSCClient alloc] init];
-                F53OSCMessage *message =
-                [F53OSCMessage messageWithAddressPattern:@"/cursor/motionData"
-                                               arguments:@[@(_currentAttitude.pitch),@(_currentAttitude.roll),@(_currentAttitude.yaw),@(touchDown),@(touchDragRelativePosition.x),@(touchDragRelativePosition.y)]];
-                [oscClient sendPacket:message toHost:[_hostService hostName] onPort:[_hostService port]];
+                F53OSCMessage *beginMessage =
+                [F53OSCMessage messageWithAddressPattern:@"/tmote/begin"
+                                               arguments:@[@(messageId)]];
+                
+                F53OSCMessage *motionMessage =
+                [F53OSCMessage messageWithAddressPattern:@"/tmote/motion"
+                                               arguments:@[@(messageId),@(_currentAttitude.pitch),@(_currentAttitude.roll),@(_currentAttitude.yaw)]];
+                
+                F53OSCMessage *cursorMessage =
+                [F53OSCMessage messageWithAddressPattern:@"/tmote/relCur"
+                                               arguments:@[@(messageId),@(0),@(touchDragRelativePosition.x),@(touchDragRelativePosition.y)]];
+                
+                F53OSCMessage *buttonsMessage =
+                [F53OSCMessage messageWithAddressPattern:@"/tmote/buttons"
+                                               arguments:@[@(messageId),@(touchDown)]];
+                
+                F53OSCMessage *endMessage =
+                [F53OSCMessage messageWithAddressPattern:@"/tmote/end"
+                                               arguments:@[@(messageId)]];
+                
+                F53OSCBundle *bundle = [[F53OSCBundle alloc] init];
+                bundle.elements = [NSArray arrayWithObjects:[beginMessage packetData], [motionMessage packetData], [cursorMessage packetData], [buttonsMessage packetData], [endMessage packetData], nil];
+                
+                [oscClient sendPacket:bundle toHost:[self.hostService hostName] onPort:[self.hostService port]];
+                
+                messageId++;
             }
             
         }];
@@ -83,6 +107,14 @@
 {
     [_motionManager stopDeviceMotionUpdates];
     self.refAttitude = nil;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake) {
+        NSLog(@"shakieshakie");
+        [self recalibrateMotion];
+    }
 }
 
 - (IBAction)toggleActive:(id)sender
@@ -136,15 +168,17 @@
     touchDown = false;
 }
 
+- (IBAction)recalibrateMotion
+{
+    self.refAttitude = self.motionManager.deviceMotion.attitude;
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)recalibrateMotion
-{
-    self.refAttitude = self.motionManager.deviceMotion.attitude;
-}
 
 @end
