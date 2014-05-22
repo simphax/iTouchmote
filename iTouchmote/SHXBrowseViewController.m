@@ -74,18 +74,21 @@
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)netServiceBrowser didRemoveService:(NSNetService *)netService moreComing:(BOOL)moreServicesComing
 {
-    NSLog(@"Lost service %@",netService);
-    
-    if(connectedService == [services indexOfObject:netService])
+    @synchronized([NSNumber numberWithUnsignedInteger:1337])
     {
-        connectedService = -1;
+        NSLog(@"Lost service %@",netService);
+        
+        if(connectedService == [services indexOfObject:netService])
+        {
+            connectedService = -1;
+        }
+        if(touchViewController != nil && [touchViewController.hostService isEqual:netService])
+        {
+            touchViewController.hostService = nil;
+        }
+        [services removeObject:netService];
+        [self.bonjourTable reloadData];
     }
-    if(touchViewController != nil && touchViewController.hostService == netService)
-    {
-        touchViewController.hostService = nil;
-    }
-    [services removeObject:netService];
-    [self.bonjourTable reloadData];
 }
 
 #pragma mark NSNetServiceDelegate
