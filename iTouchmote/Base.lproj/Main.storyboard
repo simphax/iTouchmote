@@ -73,7 +73,8 @@
                                 <state key="normal" title="Touch"/>
                                 <connections>
                                     <action selector="touchButtonDown:forEvent:" destination="vXZ-lx-hvc" eventType="touchDown" id="EJr-ZN-WMm"/>
-                                    <action selector="touchButtonUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FZb-hB-ClZ"/>
+                                    <action selector="touchButtonUp:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpOutside" id="xdy-tJ-m0H"/>
+                                    <action selector="touchButtonUp:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zb6-FN-X2u"/>
                                     <action selector="touchDragInside:forEvent:" destination="vXZ-lx-hvc" eventType="touchDragInside" id="8dV-vG-jkR"/>
                                 </connections>
                             </button>

@@ -9,11 +9,15 @@
 #import "SHXTouchViewController.h"
 #import "F53OSC.h"
 
+#define MAX_TOUCHES 11
+
 @interface SHXTouchViewController ()
 {
     bool touchDown;
     CGPoint firstTouchPosition;
-    CGPoint touchDragRelativePosition;
+    NSMutableDictionary *offsetTouches;
+    
+    NSMutableArray *allTouches;
     
     int messageId;
 }
@@ -36,6 +40,9 @@
     NSLog(@"Lets go!");
     touchDown = false;
     messageId = 0;
+    
+    offsetTouches = [NSMutableDictionary dictionary];
+    allTouches = [[NSMutableArray alloc] initWithCapacity:MAX_TOUCHES];
     
     _motionManager = [[CMMotionManager alloc] init];
     [_motionManager setDeviceMotionUpdateInterval:0.01];
@@ -83,28 +90,41 @@
                 {
                     //NSLog(@"Sending message to %@",[theService hostName]);
                     F53OSCClient *oscClient = [[F53OSCClient alloc] init];
-                    F53OSCMessage *beginMessage =
-                    [F53OSCMessage messageWithAddressPattern:@"/tmote/begin"
-                                                   arguments:@[@(messageId)]];
                     
-                    F53OSCMessage *motionMessage =
-                    [F53OSCMessage messageWithAddressPattern:@"/tmote/motion"
-                                                   arguments:@[@(messageId),@(_currentAttitude.pitch),@(_currentAttitude.roll),@(_currentAttitude.yaw)]];
+                    NSMutableArray *allMessages = [[NSMutableArray alloc] init];
                     
-                    F53OSCMessage *cursorMessage =
-                    [F53OSCMessage messageWithAddressPattern:@"/tmote/relCur"
-                                                   arguments:@[@(messageId),@(0),@(touchDragRelativePosition.x),@(touchDragRelativePosition.y)]];
+                    [allMessages addObject:[[F53OSCMessage messageWithAddressPattern:@"/tmote/begin"
+                                                                          arguments:@[@(messageId)]] packetData]
+                    ];
                     
-                    F53OSCMessage *buttonsMessage =
-                    [F53OSCMessage messageWithAddressPattern:@"/tmote/buttons"
-                                                   arguments:@[@(messageId),@(touchDown)]];
                     
-                    F53OSCMessage *endMessage =
-                    [F53OSCMessage messageWithAddressPattern:@"/tmote/end"
-                                                   arguments:@[@(messageId)]];
+                    [allMessages addObject:[[F53OSCMessage messageWithAddressPattern:@"/tmote/motion"
+                                                                          arguments:@[@(messageId),@(_currentAttitude.pitch),@(_currentAttitude.roll),@(_currentAttitude.yaw)]] packetData]
+                    ];
+                    
+                    @synchronized(offsetTouches)
+                    {
+                            [offsetTouches enumerateKeysAndObjectsUsingBlock:^void(id key, id value, BOOL *stop)
+                             {
+                                 int touchId = [key integerValue];
+                                 CGPoint point = [value CGPointValue];
+                                 [allMessages addObject:[[F53OSCMessage messageWithAddressPattern:@"/tmote/relCur"
+                                                                                        arguments:@[@(messageId),@(touchId),@(point.x),@(point.y)]] packetData]
+                                  ];
+                             }];
+                    }
+                    
+                    [allMessages addObject:[[F53OSCMessage messageWithAddressPattern:@"/tmote/buttons"
+                                                                          arguments:@[@(messageId),@(touchDown)]] packetData]
+                    ];
+
+                    
+                    [allMessages addObject:[[F53OSCMessage messageWithAddressPattern:@"/tmote/end"
+                                                                          arguments:@[@(messageId)]] packetData]
+                    ];
                     
                     F53OSCBundle *bundle = [[F53OSCBundle alloc] init];
-                    bundle.elements = [NSArray arrayWithObjects:[beginMessage packetData], [motionMessage packetData], [cursorMessage packetData], [buttonsMessage packetData], [endMessage packetData], nil];
+                    bundle.elements = allMessages;
                     
                     [oscClient sendPacket:bundle toHost:[self.hostService hostName] onPort:[self.hostService port]];
                     
@@ -121,12 +141,17 @@
     self.refAttitude = nil;
 }
 
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+-(int) getTouchId:(UITouch *) touch
 {
-    if (motion == UIEventSubtypeMotionShake) {
-        NSLog(@"shakieshakie");
-        [self recalibrateMotion];
+    int i = [allTouches indexOfObject:touch];
+    
+    if(i == NSNotFound)
+    {
+        [allTouches addObject:touch];
+        i = [allTouches indexOfObject:touch];
     }
+    
+    return i;
 }
 
 - (IBAction)toggleActive:(id)sender
@@ -150,32 +175,47 @@
 }
 
 - (IBAction)touchDragInside:(id)sender forEvent:(UIEvent *)event {
-    UITouch *touch = [[event allTouches] anyObject];
-    CGPoint location = [touch locationInView:touch.window];
-    
-    location.x = location.x - firstTouchPosition.x;
-    location.y = location.y - firstTouchPosition.y;
-    
-    touchDragRelativePosition.x = location.x/touch.window.bounds.size.width;
-    touchDragRelativePosition.y = location.y/touch.window.bounds.size.height;
+    for(UITouch *touch in [event allTouches])
+    {
+        int touchId = [self getTouchId:touch];
+        CGPoint location = [touch locationInView:touch.window];
+        
+        location.x = location.x - firstTouchPosition.x;
+        location.y = location.y - firstTouchPosition.y;
+        
+        CGPoint point;
+        point.x = location.x/touch.window.bounds.size.width;
+        point.y = location.y/touch.window.bounds.size.height;
+        
+        @synchronized(offsetTouches)
+        {
+            offsetTouches[[NSNumber numberWithInt:touchId]] = [NSValue valueWithCGPoint:point];
+        }
+    }
 }
 
 - (IBAction)touchButtonDown:(id)sender forEvent:(UIEvent *)event
 {
     UITouch *touch = [[event allTouches] anyObject];
+    [allTouches addObject:touch];
     CGPoint location = [touch locationInView:touch.window];
     
     firstTouchPosition = location;
-    touchDragRelativePosition.x = 0;
-    touchDragRelativePosition.y = 0;
+    @synchronized(offsetTouches)
+    {
+        [offsetTouches removeAllObjects];
+    }
     
     touchDown = true;
 }
 
-- (IBAction)touchButtonUp:(id)sender
+- (IBAction)touchButtonUp:(id)sender forEvent:(UIEvent *)event
 {
-    touchDragRelativePosition.x = 0;
-    touchDragRelativePosition.y = 0;
+    [allTouches removeAllObjects];
+    @synchronized(offsetTouches)
+    {
+        [offsetTouches removeAllObjects];
+    }
     touchDown = false;
 }
 
