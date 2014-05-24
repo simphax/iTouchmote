@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40D54E71930DF45001E1995 /* libCHDataStructures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F40D54E21930DF36001E1995 /* libCHDataStructures.a */; };
 		F4A5F53419190CD300561D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53319190CD300561D5E /* Foundation.framework */; };
 		F4A5F53619190CD300561D5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53519190CD300561D5E /* CoreGraphics.framework */; };
 		F4A5F53819190CD300561D5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A5F53719190CD300561D5E /* UIKit.framework */; };
@@ -42,6 +43,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F40D54E11930DF36001E1995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F40D54DB1930DF36001E1995 /* CHDataStructures-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4399A0D10A33C1200209906;
+			remoteInfo = "iOS Static Library";
+		};
+		F40D54E31930DF36001E1995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F40D54DB1930DF36001E1995 /* CHDataStructures-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DFBC2D710A7540A007BF56F;
+			remoteInfo = "iOS Unit Testing";
+		};
+		F40D54E51930DF36001E1995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F40D54DB1930DF36001E1995 /* CHDataStructures-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DFBC1ED10A74964007BF56F;
+			remoteInfo = "iOS Unit Testing App";
+		};
 		F4A5F55619190CD300561D5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F4A5F52819190CD300561D5E /* Project object */;
@@ -52,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F40D54DB1930DF36001E1995 /* CHDataStructures-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CHDataStructures-iOS.xcodeproj"; path = "CHDataStructures/CHDataStructures-iOS.xcodeproj"; sourceTree = "<group>"; };
 		F4A5F53019190CD300561D5E /* iTouchmote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTouchmote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A5F53319190CD300561D5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4A5F53519190CD300561D5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40D54E71930DF45001E1995 /* libCHDataStructures.a in Frameworks */,
 				F4A5F56919190D9100561D5E /* CoreMotion.framework in Frameworks */,
 				F4A5F53619190CD300561D5E /* CoreGraphics.framework in Frameworks */,
 				F4A5F53819190CD300561D5E /* UIKit.framework in Frameworks */,
@@ -134,9 +158,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F40D54DC1930DF36001E1995 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F40D54E21930DF36001E1995 /* libCHDataStructures.a */,
+				F40D54E41930DF36001E1995 /* CHDataStructures-iOS.octest */,
+				F40D54E61930DF36001E1995 /* CHDataStructures.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F4A5F52719190CD300561D5E = {
 			isa = PBXGroup;
 			children = (
+				F40D54DB1930DF36001E1995 /* CHDataStructures-iOS.xcodeproj */,
 				F4D87AFB19193DA7005C8855 /* MetatoneOSC */,
 				F4A5F53919190CD300561D5E /* iTouchmote */,
 				F4A5F55819190CD300561D5E /* iTouchmoteTests */,
@@ -318,6 +353,12 @@
 			mainGroup = F4A5F52719190CD300561D5E;
 			productRefGroup = F4A5F53119190CD300561D5E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F40D54DC1930DF36001E1995 /* Products */;
+					ProjectRef = F40D54DB1930DF36001E1995 /* CHDataStructures-iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F4A5F52F19190CD300561D5E /* iTouchmote */,
@@ -325,6 +366,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F40D54E21930DF36001E1995 /* libCHDataStructures.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCHDataStructures.a;
+			remoteRef = F40D54E11930DF36001E1995 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F40D54E41930DF36001E1995 /* CHDataStructures-iOS.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "CHDataStructures-iOS.octest";
+			remoteRef = F40D54E31930DF36001E1995 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F40D54E61930DF36001E1995 /* CHDataStructures.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CHDataStructures.app;
+			remoteRef = F40D54E51930DF36001E1995 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F4A5F52E19190CD300561D5E /* Resources */ = {
@@ -500,6 +565,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTouchmote/iTouchmote-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					CHDataStructures/source,
+				);
 				INFOPLIST_FILE = "iTouchmote/iTouchmote-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -516,6 +586,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTouchmote/iTouchmote-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					CHDataStructures/source,
+				);
 				INFOPLIST_FILE = "iTouchmote/iTouchmote-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
