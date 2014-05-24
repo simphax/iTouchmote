@@ -20,8 +20,6 @@
     int smoothingSize;
     NSMutableArray *bufferYaw;
     NSMutableArray *bufferPitch;
-    
-    NSTimer *netSendTimer;
 }
 
 @property (strong, nonatomic) NSOperationQueue *motionQueue;
@@ -43,7 +41,7 @@
     touchDown = false;
     messageId = 0;
     
-    smoothingSize = 10;
+    smoothingSize = 2;
     
     bufferYaw = [[NSMutableArray alloc] initWithCapacity:smoothingSize];
     bufferPitch = [[NSMutableArray alloc] initWithCapacity:smoothingSize];
@@ -70,14 +68,14 @@
             if([bufferYaw count]>0)
             {
                 NSLog(@"Smoothing with %i values",[bufferYaw count]);
-                //@synchronized([NSNumber numberWithUnsignedInteger:1336])
+               // @synchronized([NSNumber numberWithUnsignedInteger:1336])
                 //{
-                    for (NSNumber *value in [bufferYaw copy]) {
+                    for (NSNumber *value in bufferYaw ) {
                         yaw += value.doubleValue;
                     }
                     yaw /= [bufferYaw count];
                     
-                    for (NSNumber *value in [bufferPitch copy]) {
+                    for (NSNumber *value in bufferPitch ) {
                         pitch += value.doubleValue;
                     }
                     pitch /= [bufferPitch count];
@@ -151,7 +149,7 @@
             //{
                 [bufferYaw addObject:[NSNumber numberWithDouble:_currentAttitude.yaw]];
                 [bufferPitch addObject:[NSNumber numberWithDouble:_currentAttitude.pitch]];
-            //}
+            
             /*
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.pitchLabel setText:[NSString stringWithFormat:@"%.2f",(180/M_PI)*_currentAttitude.pitch]];
@@ -159,22 +157,17 @@
                 [self.yawLabel setText:[NSString stringWithFormat:@"%.2f",(180/M_PI)*_currentAttitude.yaw]];
             }];
             */
-            
+                if([bufferYaw count]>=smoothingSize)
+                {
+                    [self sendFrame];
+                }
+            //}
         }];
     }
-    if(netSendTimer != nil)
-    {
-        [netSendTimer invalidate];
-    }
-    netSendTimer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(sendFrame) userInfo:nil repeats:YES];
 }
 
 -(void) stopMotionUpdates
 {
-    if(netSendTimer != nil)
-    {
-        [netSendTimer invalidate];
-    }
     [_motionManager stopDeviceMotionUpdates];
     [bufferYaw removeAllObjects];
     [bufferPitch removeAllObjects];
