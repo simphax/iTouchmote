@@ -1,3 +1,6 @@
 [submodule "MetatoneOSC"]
 	path = MetatoneOSC
 	url = https://github.com/simphax/MetatoneOSC.git
+[submodule "CHDataStructures"]
+	path = CHDataStructures
+	url = https://github.com/simphax/CHDataStructures.git
