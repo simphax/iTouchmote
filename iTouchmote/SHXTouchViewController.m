@@ -8,6 +8,7 @@
 
 #import "SHXTouchViewController.h"
 #import "F53OSC.h"
+#import "CHDataStructures.h"
 
 @interface SHXTouchViewController ()
 {
@@ -16,6 +17,9 @@
     CGPoint touchDragRelativePosition;
     
     int messageId;
+    
+    CHCircularBuffer *bufferYaw;
+    CHCircularBuffer *bufferPitch;
 }
 
 @property (strong, nonatomic) NSOperationQueue *motionQueue;
@@ -36,6 +40,10 @@
     NSLog(@"Lets go!");
     touchDown = false;
     messageId = 0;
+    
+    bufferYaw = [[CHCircularBuffer alloc] initWithCapacity:5];
+    bufferPitch = [[CHCircularBuffer alloc] initWithCapacity:5];
+
     
     _motionManager = [[CMMotionManager alloc] init];
     [_motionManager setDeviceMotionUpdateInterval:0.01];
@@ -70,6 +78,13 @@
             _currentAttitude = motionData.attitude;
             
             [_currentAttitude multiplyByInverseOfAttitude:self.refAttitude];
+            
+            [bufferYaw addObject:[NSNumber numberWithDouble:_currentAttitude.yaw]];
+            [bufferPitch addObject:[NSNumber numberWithDouble:_currentAttitude.pitch]];
+            
+            NSArray *allObj = [bufferYaw allObjects];
+            
+            NSLog(@"%i",[allObj count]);
             /*
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.pitchLabel setText:[NSString stringWithFormat:@"%.2f",(180/M_PI)*_currentAttitude.pitch]];
